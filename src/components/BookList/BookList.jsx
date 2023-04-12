@@ -1,8 +1,6 @@
+import P from 'prop-types';
 import React from 'react';
-import {
-  List,
-  ListItem
-} from './styles';
+import {List, ListItem} from './styles';
 
 const BookList = ({books, getBook}) => {
   return (
@@ -14,6 +12,11 @@ const BookList = ({books, getBook}) => {
       ))}
     </List>
   );
-}
+};
+
+BookList.propTypes = {
+  books: P.array.isRequired,
+  getBook: P.func.isRequired,
+};
 
 export default BookList;
